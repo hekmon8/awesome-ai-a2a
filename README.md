@@ -1,88 +1,119 @@
-# Awesome A2A Agent Protocol
+# Awesome A2A (Agent-to-Agent Protocol）
 
-This repository is a curated collection of resources related to the A2A (Agent-to-Agent) protocol. A2A enables seamless communication and collaboration between agents, facilitating a new paradigm of interactions in AI systems. This repository aims to provide useful documentation, tools, tutorials, implementations, and contribution guidelines for developers and researchers working with the A2A protocol.
+> A curated list of resources, tools, libraries, and implementations for Google's Agent-to-Agent (A2A) protocol
 
-## Table of Contents
+## Contents
 
 - [Introduction](#introduction)
+- [Official Resources](#official-resources)
 - [Protocol Documentation](#protocol-documentation)
-- [Tools](#tools)
-- [Tutorials](#tutorials)
 - [Implementations](#implementations)
+  - [Python](#python)
+  - [JavaScript](#javascript)
+  - [Rust](#rust)
+  - [Other Languages](#other-languages)
+- [Tools and Libraries](#tools-and-libraries)
+- [Sample Agents](#sample-agents)
+- [Tutorials and Guides](#tutorials-and-guides)
+- [Articles and Blog Posts](#articles-and-blog-posts)
+- [Community Resources](#community-resources)
+- [Related Projects](#related-projects)
+- [Presentations and Talks](#presentations-and-talks)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
-The A2A (Agent-to-Agent) protocol was introduced by Google to enable secure, standardized communication between intelligent agents across different domains. It facilitates the development of AI systems that can collaborate, exchange information, and execute tasks autonomously. By using this protocol, agents can interact with each other in a decoupled and scalable manner, making it ideal for complex AI ecosystems.
+The Agent-to-Agent (A2A) protocol is an open standard initiated by Google designed to enable seamless communication and interoperability between AI agents. Released in April 2025, it provides a standardized method for agents to discover each other's capabilities, negotiate interactions, and coordinate tasks across different frameworks and vendors. A2A is designed to complement other protocols like Anthropic's Model Context Protocol (MCP), acting as a higher-level abstraction specifically for agent-to-agent communication.
+
+## Official Resources
+
+- [GitHub Repository](https://github.com/google/A2A) - Official implementation and documentation of the A2A protocol
+- [A2A Documentation](https://google.github.io/A2A/) - Official protocol documentation and guides
+- [Official Announcement](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/) - Google's announcement of the A2A protocol
 
 ## Protocol Documentation
 
-- **Official Documentation**: [Google A2A Protocol Specification](https://example.com/a2a-protocol-doc)  
-  A detailed guide to the A2A protocol, including message formats, communication patterns, security considerations, and best practices.
-
-- **RFC**: [A2A Protocol RFC](https://example.com/a2a-protocol-rfc)  
-  The formal RFC that outlines the design and specification of the A2A protocol.
-
-- **Protocol Workflow**:  
-  - Agents initiate communication through a handshake process.
-  - Messages are exchanged in a predefined format, ensuring interoperability between different agents.
-  - Each message includes a header, payload, and verification mechanisms for security.
-  - Responses are processed and acted upon according to predefined agent logic.
-
-## Tools
-
-- **A2A SDK**: [A2A SDK GitHub Repository](https://github.com/google/a2a-sdk)  
-  An open-source software development kit (SDK) for building agents that support A2A communication.
-
-- **A2A Simulator**: [A2A Simulator Tool](https://example.com/a2a-simulator)  
-  A simulation tool that allows you to test and debug A2A protocol interactions between agents in a controlled environment.
-
-- **A2A Client Library**: [A2A Client GitHub Repository](https://github.com/google/a2a-client)  
-  A library for building A2A client applications that can communicate with other agents using the A2A protocol.
-
-## Tutorials
-
-- **Getting Started with A2A**:  
-  [Tutorial 1: Setting Up A2A Agents](https://example.com/tutorial1)  
-  Learn how to set up your first A2A agents and establish communication between them.
-
-- **Building A2A-Based Systems**:  
-  [Tutorial 2: Developing an A2A Client](https://example.com/tutorial2)  
-  A step-by-step guide for building an A2A client application that can send and receive messages from other agents.
-
-- **Advanced A2A Use Cases**:  
-  [Tutorial 3: Multi-Agent Collaboration](https://example.com/tutorial3)  
-  Explore how to implement complex scenarios involving multiple agents working together using the A2A protocol.
+- [A2A Protocol Specification](https://github.com/google/A2A/blob/main/specification) - JSON specification of the A2A protocol structures
+- [Core Concepts](https://github.com/google/A2A/blob/main/README.md) - Explanation of key A2A concepts: Agent Card, Server, Client, Task, Message, Artifact, Streaming, and Push Notifications
 
 ## Implementations
 
-- **A2A Server Example**: [A2A Server GitHub Repository](https://github.com/google/a2a-server)  
-  A sample implementation of an A2A server that handles incoming requests from A2A clients and processes their messages.
+### Python
 
-- **A2A Client Example**: [A2A Client GitHub Repository](https://github.com/google/a2a-client-example)  
-  A basic implementation of an A2A client that interacts with other agents using the A2A protocol.
+- [A2A Sample Client/Server (Python)](https://github.com/google/A2A/blob/main/samples/python/common) - Reference implementation of A2A client and server in Python
+- [A2A CLI (Python)](https://github.com/google/A2A/blob/main/samples/python/hosts/cli/README.md) - Command-line interface for A2A in Python
+- [Python A2A](https://medium.com/@the_manoj_desai/meet-google-a2a-the-protocol-that-will-revolutionize-multi-agent-ai-systems-80d55a4583ed) - Production-ready Python implementation
 
-- **A2A-based Applications**:  
-  [Example 1: A2A Smart Home System](https://example.com/smart-home)  
-  A smart home system where agents communicate to control devices, optimize energy usage, and interact with users.
+### JavaScript
+
+- [A2A Sample Client/Server (JavaScript)](https://github.com/google/A2A/blob/main/samples/js/src) - Reference implementation of A2A client and server in JavaScript
+- [A2A CLI (JavaScript)](https://github.com/google/A2A/blob/main/samples/js/README.md) - Command-line interface for A2A in JavaScript
+
+### Rust
+
+- [a2a-rs](https://github.com/EmilLindfors/a2a-rs) - Complete implementation of the A2A protocol in Rust, supporting both client and server roles with multiple transport options
+
+### Other Languages
+
+*This section will be populated as more implementations become available*
+
+## Tools and Libraries
+
+- [Multi-Agent Web App Demo](https://github.com/google/A2A) - Demo showcasing multi-agent communication via A2A
+- [Google ADK](https://developers.googleblog.com/en/agent-development-kit-easy-to-build-multi-agent-applications/) - Agent Development Kit with A2A support
+
+## Sample Agents
+
+- [Currency Converter Agent (LangGraph)](https://github.com/google/A2A/blob/main/samples/python/agents/langgraph/README.md) - A sample A2A server that converts currencies using LangGraph
+- [Image Generation Agent (CrewAI)](https://github.com/google/A2A/blob/main/samples/python/agents/crewai/README.md) - A sample A2A server that generates images using CrewAI
+
+## Tutorials and Guides
+
+- [First Look at A2A Protocol](https://medium.com/the-low-end-disruptor/google-a2a-a-first-look-at-another-agent-agent-protocol-cb853aa4d084) - Guide to understanding and using A2A
+- [A2A: The Protocol That Will Revolutionize Multi-Agent AI Systems](https://medium.com/@the_manoj_desai/meet-google-a2a-the-protocol-that-will-revolutionize-multi-agent-ai-systems-80d55a4583ed) - Tutorial and introduction to A2A
+
+## Articles and Blog Posts
+
+- [Google's A2A Protocol: The Missing Lingua Franca](https://medium.com/@jenray1986/google-launching-a2a-protocol-the-missing-lingua-franca-for-a-world-of-talking-ai-agents-5e329ec7fec5) - Overview of A2A and its significance
+- [Agent-to-Agent Protocol to Break Down AI Silos](https://medium.com/@hxzhouh/google-introduces-agent-to-agent-protocol-a2a-to-break-down-ai-silos-cf456e147944) - Analysis of how A2A addresses AI integration challenges
+- [Google's Agent2Agent Open Protocol](https://www.infoworld.com/article/3958032/googles-agent2agent-open-protocol-aims-to-connect-disparate-agents.html) - InfoWorld article on A2A protocol
+- [The Future of AI Tooling is Interoperable: MCP and Agent2Agent](https://www.vccafe.com/2025/04/10/the-future-of-ai-tooling-is-interoperable-mcp-and-agent2agent/) - Comparison between MCP and A2A protocols
+
+## Community Resources
+
+- [A2A Discussion on Hacker News](https://news.ycombinator.com/item?id=43631381) - Community discussion about A2A protocol
+- [r/modelcontextprotocol](https://www.reddit.com/r/modelcontextprotocol/) - Subreddit with discussions on A2A and MCP
+
+## Related Projects
+
+- [Model Context Protocol (MCP)](https://github.com/modelcontextprotocol) - Complementary protocol to A2A that provides tools and context to agents
+- [Vertex AI Agent Builder](https://cloud.google.com/products/agent-builder) - Google Cloud's platform with A2A support
+- [omega-awesome-a2a](https://github.com/omegalabsinc/omega-awesome-a2a) - Collection of multimodal model resources related to Any-to-Any conversions
+
+## Presentations and Talks
+
+*This section will be populated as presentations become available*
 
 ## Contributing
 
-We welcome contributions from the community to improve this repository and the A2A protocol. Here are some ways you can contribute:
+### How to Contribute
 
-- **Reporting Bugs**: If you encounter any issues or bugs, please report them via GitHub issues.
-- **Submitting Features**: Propose new features or improvements by submitting pull requests.
-- **Writing Documentation**: Help us improve the documentation by adding new tutorials, examples, and detailed explanations.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Create a new Pull Request
 
-### Steps to Contribute:
-1. Fork the repository.
-2. Clone your fork locally and create a new branch.
-3. Make your changes or add new content.
-4. Push your changes and create a pull request.
+### Contribution Guidelines
 
-Please follow the [contribution guidelines](CONTRIBUTING.md) for more details.
+- Ensure your contribution is relevant to the A2A protocol
+- Follow the existing format for consistency
+- Provide a brief description for each added resource
+- Check for duplicates before submitting
+- Include proper links and attributions
 
 ## License
 
-This repository is licensed under the [MIT License](LICENSE).
+[![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0)
+
+To the extent possible under law, the contributors have waived all copyright and related or neighboring rights to this work.
